@@ -118,7 +118,7 @@ class MultipartUploader {
       this.uploadId = result.uploadId
       
       if (result.isOldUpload) {
-        _this._resumeUpload();
+        this._resumeUpload();
         return;
       }
 
