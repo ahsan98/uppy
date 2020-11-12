@@ -116,6 +116,11 @@ class MultipartUploader {
 
       this.key = result.key
       this.uploadId = result.uploadId
+      
+      if (result.isOldUpload) {
+        this._resumeUpload();
+        return;
+      }
 
       this.options.onStart(result)
       this._uploadParts()
